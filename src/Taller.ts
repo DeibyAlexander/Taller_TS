@@ -6,7 +6,7 @@
 
 //TODO-> -------------------CENTROS----------------------
 
-class Centro{
+export class Centro{
     constructor(
         public readonly id:number,
         public centro:String,
@@ -53,21 +53,6 @@ class Centro{
 
 
 }
-//! Via Getters
-
-const centro1 = new Centro(1,"CAMPUSLAND BUCARAMANGA","Santander","Bucaramanga",3123678534)
-const centro2 = new Centro(2,"CAMPUSLAND BUCARAMANGA","Santander","Bucaramanga",3123678534)
-const centro3 = new Centro(3,"CAMPUSLAND BUCARAMANGA","Santander","Bucaramanga",3123678534)
-const centro4 = new Centro(4,"CAMPUSLAND BUCARAMANGA","Santander","Bucaramanga",3123678534)
-const centro5 = new Centro(5,"CAMPUSLAND BUCARAMANGA","Santander","Bucaramanga",3123678534)
-
-
-
-//! Via Setters
-
-centro1.centro= "CAMPUSLANDS FRONTERA"
-
-console.log(centro1);
 
 
 
@@ -75,7 +60,7 @@ console.log(centro1);
 
 //TODO-> -------------------RUTAS----------------------
 
-class Ruta{
+export class Ruta{
     constructor(
         public readonly id:number,
         public ruta:String,
@@ -124,28 +109,14 @@ class Ruta{
 }
 
 
-//! Via Getters
 
-const ruta1 = new Ruta(1,"JAVASCIPT","CAMPUSLAND FRONTERA","VERMEN","6 a.m - 2 p.m")
-const ruta2 = new Ruta(2,"HTML & CSS","CAMPUSLAND BUCARAMANGA","Miguel","6 a.m - 2 p.m")
-const ruta3 = new Ruta(3,"REACT","CAMPUSLAND BUCARAMANGA","Vermen","6 a.m - 2 p.m")
-const ruta4 = new Ruta(4,"C++","CAMPUSLAND FORNTERA","Jholver","6 a.m - 2 p.m")
-const ruta5 = new Ruta(5,"PHP","CAMPUSLAND BUCARAMANGA","Vermen","6 a.m - 2 p.m")
-
-
-
-//! Via Setters
-
-ruta1.ruta= "NodeJs"
-
-console.log(ruta1);
 
 
 
 
 //TODO-> -------------------NIVELS----------------------
 
-class Nivel{
+export class Nivel{
     constructor(
         public readonly id:number,
         public nivel:String,
@@ -156,47 +127,49 @@ class Nivel{
 
          //! GETTERS
 
-         get getRuta():String{
-            return this.ruta
+         get getNivel():String{
+            return this.nivel
         }
         
-        get getCentro() : String {
-            return this.centro
+        get getSalon() : String {
+            return this.salon
         }
     
-        get getTrainer():String{
-            return this.trainer
+        get getRuta():String{
+            return this.ruta
         }
-        get getHorario():String{
-            return this.horario
+        get getDuracion():String{
+            return this.duracion
         }
     
         //! SETTERS
         
     
+        set setNivel(nivel:String){
+            this.nivel = nivel
+        }
+    
+        set setSalon(salon:String){
+            this.salon = salon
+        }
+    
         set setRuta(ruta:String){
             this.ruta = ruta
         }
-    
-        set setCentro(centro:String){
-            this.centro = centro
-        }
-    
-        set setTrainer(trainer:String){
-            this.trainer = trainer
-        }
         
-        set setHorario(horario:String){
-            this.horario = horario
+        set setDuracion(duracion:String){
+            this.duracion = duracion
         }
 
 }
 
 
 
+
+
 //TODO-> -------------------CAMPERS----------------------
 
-class Camper{
+export class Camper{
     constructor(
         public readonly id:number,
         public camper:String,
@@ -205,13 +178,98 @@ class Camper{
         public tipoIdentificacion:String,
         public nroIdentificacion:number
     ){}
+
+                 //! GETTERS
+
+                 get getCamper():String{
+                    return this.camper
+                }
+                
+                get getEmail() : String {
+                    return this.email
+                }
+            
+                get getPromedio():number{
+                    return this.promedio
+                }
+                get getTipoIdentificacion():String{
+                    return this.tipoIdentificacion
+                }
+                get getNroIdentificacion():number{
+                    return this.nroIdentificacion
+                }
+            
+                //! SETTERS
+                
+            
+                set setCamper(camper:String){
+                    this.camper = camper
+                }
+            
+                set setEmail(email:String){
+                    this.email = email
+                }
+            
+                set setPromedio(promedio:number){
+                    this.promedio = promedio
+                }
+                
+                set setTipoIdentificacion(tipoIdentificacion:String){
+                    this.tipoIdentificacion = tipoIdentificacion
+                }
+
+                set setNroIdentificacion(nroIdentificacion:number){
+                    this.nroIdentificacion = nroIdentificacion
+                }
 }
 
-class Contrato{
+
+
+
+//TODO-> -------------------CONTRATOS----------------------
+
+export class Contrato{
     constructor(
         public readonly id:number,
         public empresa:String,
+        public moneda: String,
         public salario:number,
         public modalidad:String
     ){}
+
+             //! GETTERS
+
+             get getEmpresa():String{
+                return this.empresa
+            }
+            
+            get getMoneda() : String {
+                return this.moneda
+            }
+        
+            get getSalario():number{
+                return this.salario
+            }
+            get getModalidad():String{
+                return this.modalidad
+            }
+        
+            //! SETTERS
+            
+        
+            set setEmpresa(empresa:String){
+                this.empresa = empresa
+            }
+        
+            set setMoneda(moneda:String){
+                this.moneda = moneda
+            }
+        
+            set setSalario(salario:number){
+                this.salario = salario
+            }
+            
+            set setModalidad(modalidad:String){
+                this.modalidad = modalidad
+            }
 }

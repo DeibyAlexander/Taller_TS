@@ -1,5 +1,7 @@
 "use strict";
 //!-----CLASES-----
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Contrato = exports.Camper = exports.Nivel = exports.Ruta = exports.Centro = void 0;
 //TODO-> -------------------CENTROS----------------------
 class Centro {
     constructor(id, centro, departamento, ciudad, telefono) {
@@ -36,15 +38,7 @@ class Centro {
         this.telefono = telefono;
     }
 }
-//! Via Getters
-const centro1 = new Centro(1, "CAMPUSLAND BUCARAMANGA", "Santander", "Bucaramanga", 3123678534);
-const centro2 = new Centro(2, "CAMPUSLAND BUCARAMANGA", "Santander", "Bucaramanga", 3123678534);
-const centro3 = new Centro(3, "CAMPUSLAND BUCARAMANGA", "Santander", "Bucaramanga", 3123678534);
-const centro4 = new Centro(4, "CAMPUSLAND BUCARAMANGA", "Santander", "Bucaramanga", 3123678534);
-const centro5 = new Centro(5, "CAMPUSLAND BUCARAMANGA", "Santander", "Bucaramanga", 3123678534);
-//! Via Setters
-centro1.centro = "CAMPUSLANDS FRONTERA";
-console.log(centro1);
+exports.Centro = Centro;
 //TODO-> -------------------RUTAS----------------------
 class Ruta {
     constructor(id, ruta, centro, trainer, horario) {
@@ -81,15 +75,7 @@ class Ruta {
         this.horario = horario;
     }
 }
-//! Via Getters
-const ruta1 = new Ruta(1, "JAVASCIPT", "CAMPUSLAND FRONTERA", "VERMEN", "6 a.m - 2 p.m");
-const ruta2 = new Ruta(2, "HTML & CSS", "CAMPUSLAND BUCARAMANGA", "Miguel", "6 a.m - 2 p.m");
-const ruta3 = new Ruta(3, "REACT", "CAMPUSLAND BUCARAMANGA", "Vermen", "6 a.m - 2 p.m");
-const ruta4 = new Ruta(4, "C++", "CAMPUSLAND FORNTERA", "Jholver", "6 a.m - 2 p.m");
-const ruta5 = new Ruta(5, "PHP", "CAMPUSLAND BUCARAMANGA", "Vermen", "6 a.m - 2 p.m");
-//! Via Setters
-ruta1.ruta = "NodeJs";
-console.log(ruta1);
+exports.Ruta = Ruta;
 //TODO-> -------------------NIVELS----------------------
 class Nivel {
     constructor(id, nivel, salon, ruta, duracion) {
@@ -100,32 +86,33 @@ class Nivel {
         this.duracion = duracion;
     }
     //! GETTERS
+    get getNivel() {
+        return this.nivel;
+    }
+    get getSalon() {
+        return this.salon;
+    }
     get getRuta() {
         return this.ruta;
     }
-    get getCentro() {
-        return this.centro;
-    }
-    get getTrainer() {
-        return this.trainer;
-    }
-    get getHorario() {
-        return this.horario;
+    get getDuracion() {
+        return this.duracion;
     }
     //! SETTERS
+    set setNivel(nivel) {
+        this.nivel = nivel;
+    }
+    set setSalon(salon) {
+        this.salon = salon;
+    }
     set setRuta(ruta) {
         this.ruta = ruta;
     }
-    set setCentro(centro) {
-        this.centro = centro;
-    }
-    set setTrainer(trainer) {
-        this.trainer = trainer;
-    }
-    set setHorario(horario) {
-        this.horario = horario;
+    set setDuracion(duracion) {
+        this.duracion = duracion;
     }
 }
+exports.Nivel = Nivel;
 //TODO-> -------------------CAMPERS----------------------
 class Camper {
     constructor(id, camper, email, promedio, tipoIdentificacion, nroIdentificacion) {
@@ -137,11 +124,14 @@ class Camper {
         this.nroIdentificacion = nroIdentificacion;
     }
 }
+exports.Camper = Camper;
 class Contrato {
-    constructor(id, empresa, salario, modalidad) {
+    constructor(id, empresa, moneda, salario, modalidad) {
         this.id = id;
         this.empresa = empresa;
+        this.moneda = moneda;
         this.salario = salario;
         this.modalidad = modalidad;
     }
 }
+exports.Contrato = Contrato;
